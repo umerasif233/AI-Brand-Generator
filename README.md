@@ -30,9 +30,10 @@ To get started with the AI Brand Name Generator, follow these steps:
         python3 -m venv venv
         source venv/bin/activate
         ```
-    - Install dependencies:
+    - Install dependencies (including TensorFlow version 2.15.0):
         ```sh
         pip install -r requirements.txt
+        pip install tensorflow==2.15.0
         ```
     - Run the Flask server:
         ```sh
@@ -55,6 +56,30 @@ To get started with the AI Brand Name Generator, follow these steps:
 
 4. **API Keys**:
     - Configure the necessary API keys for the DALL-E 3 integration by adding them to your environment variables or a configuration file as specified in the project documentation.
+
+## Loading the Model and Adding Dataset
+
+1. **Prepare the Dataset**:
+    - Ensure your dataset is in the correct format (e.g., CSV) and contains the necessary data (industry, keywords, etc.).
+    - Place the dataset file in the `backend/data` directory.
+
+2. **Load the Model**:
+    - Ensure your pre-trained LSTM model file is in the `backend/models` directory.
+    - Modify the `load_model.py` script to load your specific model:
+        ```python
+        from keras.models import load_model
+
+        model = load_model('models/your_model.h5')
+        ```
+
+3. **Update the Backend to Use the Dataset**:
+    - Modify the `app.py` script to load and use the dataset for generating brand names:
+        ```python
+        import pandas as pd
+
+        # Load the dataset
+        dataset = pd.read_csv('data/your_dataset.csv')
+
 
 ## Contributions
 
