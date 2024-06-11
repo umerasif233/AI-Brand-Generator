@@ -13,6 +13,8 @@ Welcome to the AI Brand Name Generator repository! This innovative project is de
 
 - **Backend**: Built with Flask, using SQLite for the database.
 - **Frontend**: Developed with Vite and React for a dynamic and responsive user experience.
+- **Model**: LSTM(Long Short Term Memory) Model for name generation based on industry and keywords
+- **Logo Generation**: Integrated Dall-E-3 API Key for logo generation
 
 ## Getting Started
 
